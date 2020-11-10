@@ -1,0 +1,86 @@
+﻿@model Project_Assignment.Models.Person
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit Record for @Html.DisplayFor(modelItem => modelItem.FirstName) @Html.DisplayFor(modelItem => modelItem.LastName)</h1>
+
+<hr />
+
+
+<form asp-action="Edit" onsubmit="return runValidation();">
+    <div class="form-horizontal">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <input type="hidden" asp-for="Id" />
+
+        <div class="form-group">
+            <label asp-for="FirstName" class="control-label"></label>
+            <input asp-for="FirstName" class="form-control" />
+            <span asp-validation-for="FirstName" class="text-danger" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="LastName" class="control-label"></label>
+            <input asp-for="LastName" class="form-control" />
+            <span asp-validation-for="LastName" class="text-danger" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="AddressOne" class="control-label"></label>
+            <input asp-for="AddressOne" class="form-control" />
+            <span asp-validation-for="AddressOne" class="text-danger" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="AddressTwo" class="control-label"></label>
+            <input asp-for="AddressTwo" class="form-control" />
+            <span asp-validation-for="AddressTwo" class="text-danger" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="City" class="control-label"></label>
+            <input asp-for="City" class="form-control" />
+            <span asp-validation-for="City" class="text-danger" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="State" class="control-label"></label>
+            <input asp-for="State" class="form-control" />
+            <span asp-validation-for="State" class="text-danger" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Country" class="control-label"></label>
+            <input asp-for="Country" class="form-control" />
+            <span asp-validation-for="Country" class="text-danger" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Phone" class="control-label"></label>
+            <input id="form-phone" asp-for="Phone" class="form-control" />
+            <span asp-validation-for="Phone" class="text-danger" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Email" class="control-label"></label>
+            <input id="form-email" asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger" />
+        </div>
+
+
+        <div class="form-inline">
+            <input type="submit" value="Submit" class="btn btn-primary" />
+        </div>
+    </div>
+</form>
+
+<hr />
+<a asp-action="Index">Cancel</a>
+
+
+<!--Validation script-->
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

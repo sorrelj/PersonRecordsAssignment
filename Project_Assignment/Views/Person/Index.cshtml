@@ -1,0 +1,91 @@
+﻿@model IEnumerable<Project_Assignment.Models.Person> 
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<h2>Person Records</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AddressOne)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AddressTwo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.State)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var person in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => person.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => person.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => person.AddressOne)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => person.AddressTwo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => person.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => person.State)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => person.Country)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => person.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => person.Email)
+            </td>
+
+            <td>
+                <a class="btn btn-secondary" asp-action="Edit" asp-route-id="@person.Id">Edit</a>
+            </td>
+
+            <td>
+                <form asp-action="Delete" asp-route-id="@person.Id">
+                    <input class="btn btn-danger" type="submit" value="Delete" />
+                </form>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Add" class="btn btn-primary">Add Person</a>

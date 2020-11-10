@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="Project-Assignment" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^/Users/jacksonsorrells/Projects/Project_Assignment/Project_Assignment/obj/Release/netcoreapp3\.1/PubTmp/Out/$" />
+  </parameter>
+</parameters>
