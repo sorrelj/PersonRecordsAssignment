@@ -4,12 +4,12 @@
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Project_Assignment" expanded="True">
-            <Node name="Project_Assignment" expanded="True" />
+            <Node name="Project_Assignment" expanded="True">
+              <Node name="Data" expanded="True" />
+              <Node name="Startup.cs" selected="True" />
+            </Node>
           </Node>
         </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
