@@ -27,6 +27,7 @@ namespace Project_Assignment
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddRazorPages();
 
 
             // setup database context
@@ -39,6 +40,15 @@ namespace Project_Assignment
                 options.UseSqlite(connectString); 
          
             });
+
+
+            // AUTH database context
+            //services.AddDbContext<ApplicationDbContext>(options =>
+            //{
+            //    var connectionString = Configuration.GetConnectionString("ApplicationDbContext");
+
+            //    options.UseSqlite(connectionString);
+            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -59,6 +69,9 @@ namespace Project_Assignment
 
             app.UseRouting();
 
+
+            // add auth
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -66,6 +79,7 @@ namespace Project_Assignment
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Person}/{action=Index}/{id?}");
+                endpoints.MapRazorPages(); // for auth
             });
         }
     }
